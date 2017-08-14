@@ -1,18 +1,28 @@
-# Welcome!
-
-This Java template lets you get started quickly with a simple one-page playground.
-
-You can create a runnable code snippet using the `runnable` keyword:
 
 ```java runnable
 // { autofold
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+
 public class Main {
 
-public static void main(String[] args) {
+public static void main(String[] args) throws Exception {
+
+PrintWriter writer = new PrintWriter("file.txt", "UTF-8");
+writer.println("Congratulations!");
+writer.println("You've just read from a file \\o/");
+writer.close();
 // }
 
-String message = "Hello World!";
-System.out.println(message);
+// Method 1: small files
+List<String> lines = Files.readAllLines(Paths.get("file.txt"));
+
+for (String line : lines) {
+    System.out.println(line);
+}
 
 //{ autofold
 }
@@ -20,7 +30,3 @@ System.out.println(message);
 }
 //}
 ```
-
-# Advanced usage
-
-For more complex playgrounds, you can use this [Java template](https://github.com/TechDotIO/java-template)
