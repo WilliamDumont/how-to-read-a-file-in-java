@@ -25,10 +25,7 @@ List<String> lines = Files.readAllLines(Paths.get("file.txt"));
 
 // Method 2: for big files (read line by line)
 try (BufferedReader reader = Files.newBufferedReader(Paths.get("file.txt"), StandardCharsets.UTF_8)) {
-    String line = null;
-    while ((line = reader.readLine()) != null) {
-        System.out.println(line);
-    }
+    reader.lines().forEach(System.out::println);
 }
 
 //{ autofold
