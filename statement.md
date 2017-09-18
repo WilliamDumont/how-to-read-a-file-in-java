@@ -16,7 +16,7 @@ public static void main(String[] args) throws Exception {
 
 PrintWriter writer = new PrintWriter("file.txt", "UTF-8");
 writer.println("Congratulations!");
-writer.println("You've just read from a file \\o/");
+writer.println("You \\o/");
 writer.close();
 // }
 
